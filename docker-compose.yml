@@ -18,24 +18,6 @@ services:
       - VIRTUAL_HOST=ut.admin.pknw1.co.uk,utorrent.admin.pknw1.co.uk
       - VIRTUAL_PORT=8080
 
-  flaresolverr: 
-    image: ghcr.io/flaresolverr/flaresolverr:latest
-    container_name: flaresolverr
-    networks:
-      - proxy
-    hostname: flaresolverr
-    dns: 
-      - 172.22.20.1
-      - 8.8.8.8
-    environment:
-      - LOG_LEVEL=info
-      - APP_GROUP=Content
-      - APP_LOGO=https://avatars.githubusercontent.com/u/75936191?s=400&v=4
-      - VIRTUAL_HOST=flaresolverr.admin.pknw1.co.uk
-      - VIRTUAL_PORT=8191
-    ports:
-      - 172.22.20.1:8191:8191
-  
 
 networks:
   proxy:
